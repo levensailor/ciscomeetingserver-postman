@@ -1,0 +1,1014 @@
+{
+	"info": {
+		"name": "CMS",
+		"_postman_id": "5d939bad-d366-5b20-9406-4b7774f4b775",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "userProfiles",
+			"description": "",
+			"item": [
+				{
+					"name": "https://cms1.dcloud.cisco.com:445/api/v1/userProfiles",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic YXBpOmRDbG91ZDEyMyE="
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "hasLicense",
+									"value": "true",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://{{_cmshost}}:445/api/v1/userProfiles",
+							"protocol": "https",
+							"host": [
+								"{{_cmshost}}"
+							],
+							"port": "445",
+							"path": [
+								"api",
+								"v1",
+								"userProfiles"
+							]
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "https://cms1.dcloud.cisco.com:445/api/v1/userProfiles",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic YXBpOmRDbG91ZDEyMyE="
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "hasLicense",
+									"value": "true",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://{{_cmshost}}:445/api/v1/userProfiles",
+							"protocol": "https",
+							"host": [
+								"{{_cmshost}}"
+							],
+							"port": "445",
+							"path": [
+								"api",
+								"v1",
+								"userProfiles"
+							]
+						},
+						"description": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ldap",
+			"description": "",
+			"item": [
+				{
+					"name": "https://cms1.dcloud.cisco.com:445/api/v1/ldapSyncs",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic YXBpOmRDbG91ZDEyMyE="
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "ldapSource",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://{{_cmshost}}:445/api/v1/ldapSyncs",
+							"protocol": "https",
+							"host": [
+								"{{_cmshost}}"
+							],
+							"port": "445",
+							"path": [
+								"api",
+								"v1",
+								"ldapSyncs"
+							]
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "https://cms1.dcloud.cisco.com:445/api/v1/ldapSources",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic YXBpOmRDbG91ZDEyMyE="
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "server",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "mapping",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "userProfile",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "baseDn",
+									"value": "dc=dcloud,dc=cisco,dc=com",
+									"type": "text"
+								},
+								{
+									"key": "filter",
+									"value": "telephoneNumber=*",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://{{_cmshost}}:445/api/v1/ldapSources",
+							"protocol": "https",
+							"host": [
+								"{{_cmshost}}"
+							],
+							"port": "445",
+							"path": [
+								"api",
+								"v1",
+								"ldapSources"
+							]
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "https://cms1.dcloud.cisco.com:445/api/v1/ldapSources",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic YXBpOmRDbG91ZDEyMyE="
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "server",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "mapping",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "userProfile",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "baseDn",
+									"value": "dc=dcloud,dc=cisco,dc=com",
+									"type": "text"
+								},
+								{
+									"key": "filter",
+									"value": "telephoneNumber=*",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://{{_cmshost}}:445/api/v1/ldapSources",
+							"protocol": "https",
+							"host": [
+								"{{_cmshost}}"
+							],
+							"port": "445",
+							"path": [
+								"api",
+								"v1",
+								"ldapSources"
+							]
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "https://cms1.dcloud.cisco.com:445/api/v1/ldapServers",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic YXBpOmRDbG91ZDEyMyE="
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "address",
+									"value": "ad1.dcloud.cisco.com",
+									"type": "text"
+								},
+								{
+									"key": "portNumber",
+									"value": "389",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "cn=administrator,cn=users,dc=dcloud,dc=cisco,dc=com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "C1sco12345",
+									"type": "text"
+								},
+								{
+									"key": "secure",
+									"value": "false",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://{{_cmshost}}:445/api/v1/ldapServers",
+							"protocol": "https",
+							"host": [
+								"{{_cmshost}}"
+							],
+							"port": "445",
+							"path": [
+								"api",
+								"v1",
+								"ldapServers"
+							]
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "https://cms1.dcloud.cisco.com:445/api/v1/ldapServers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic YXBpOmRDbG91ZDEyMyE="
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "address",
+									"value": "ad1.dcloud.cisco.com",
+									"type": "text"
+								},
+								{
+									"key": "portNumber",
+									"value": "389",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "cn=administrator,cn=users,dc=dcloud,dc=cisco,dc=com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "C1sco12345",
+									"type": "text"
+								},
+								{
+									"key": "secure",
+									"value": "false",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://{{_cmshost}}:445/api/v1/ldapServers",
+							"protocol": "https",
+							"host": [
+								"{{_cmshost}}"
+							],
+							"port": "445",
+							"path": [
+								"api",
+								"v1",
+								"ldapServers"
+							]
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "https://cms1.dcloud.cisco.com:445/api/v1/ldapMappings",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic YXBpOmRDbG91ZDEyMyE="
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nameMapping",
+									"value": "$cn$",
+									"type": "text"
+								},
+								{
+									"key": "jidMapping",
+									"value": "$sAMAccountName$@dcloud.cisco.com",
+									"type": "text"
+								},
+								{
+									"key": "coSpaceNameMapping",
+									"value": "$cn$'s Meeting Space",
+									"type": "text"
+								},
+								{
+									"key": "coSpaceUriMapping",
+									"value": "$sAMAccountName$.space",
+									"type": "text"
+								},
+								{
+									"key": "coSpaceCallIdMapping",
+									"value": "$ipPhone$",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://{{_cmshost}}:445/api/v1/ldapMappings",
+							"protocol": "https",
+							"host": [
+								"{{_cmshost}}"
+							],
+							"port": "445",
+							"path": [
+								"api",
+								"v1",
+								"ldapMappings"
+							]
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "https://cms1.dcloud.cisco.com:445/api/v1/ldapMappings",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic YXBpOmRDbG91ZDEyMyE="
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nameMapping",
+									"value": "$cn$",
+									"type": "text"
+								},
+								{
+									"key": "jidMapping",
+									"value": "$sAMAccountName$@dcloud.cisco.com",
+									"type": "text"
+								},
+								{
+									"key": "coSpaceNameMapping",
+									"value": "$cn$'s Meeting Space",
+									"type": "text"
+								},
+								{
+									"key": "coSpaceUriMapping",
+									"value": "$sAMAccountName$.space",
+									"type": "text"
+								},
+								{
+									"key": "coSpaceCallIdMapping",
+									"value": "$ipPhone$",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://{{_cmshost}}:445/api/v1/ldapMappings",
+							"protocol": "https",
+							"host": [
+								"{{_cmshost}}"
+							],
+							"port": "445",
+							"path": [
+								"api",
+								"v1",
+								"ldapMappings"
+							]
+						},
+						"description": null
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "fca9b3aa-15ff-40c6-97cf-d5b527da70df",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "03d697d1-b017-4d3e-a6dd-dc38c3ac1ab7",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "callBridges",
+			"description": "",
+			"item": [
+				{
+					"name": "Get Call Bridge IDs",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic YXBpOmRDbG91ZDEyMyE="
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://{{_cmshost}}:445/api/v1/callBridges",
+							"protocol": "https",
+							"host": [
+								"{{_cmshost}}"
+							],
+							"port": "445",
+							"path": [
+								"api",
+								"v1",
+								"callBridges"
+							]
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Create Call Bridge Groups",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic YXBpOmRDbG91ZDEyMyE="
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "loadBalancingEnabled",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://{{_cmshost}}:445/api/v1/callBridgeGroups",
+							"protocol": "https",
+							"host": [
+								"{{_cmshost}}"
+							],
+							"port": "445",
+							"path": [
+								"api",
+								"v1",
+								"callBridgeGroups"
+							]
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Get Call bridge group IDs",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic YXBpOmRDbG91ZDEyMyE="
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://{{_cmshost}}:445/api/v1/callBridgeGroups",
+							"protocol": "https",
+							"host": [
+								"{{_cmshost}}"
+							],
+							"port": "445",
+							"path": [
+								"api",
+								"v1",
+								"callBridgeGroups"
+							]
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Assign Call Bridge to Group",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic YXBpOmRDbG91ZDEyMyE="
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "callBridgeGroup",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://{{_cmshost}}:445/api/v1/callBridges/",
+							"protocol": "https",
+							"host": [
+								"{{_cmshost}}"
+							],
+							"port": "445",
+							"path": [
+								"api",
+								"v1",
+								"callBridges",
+								""
+							]
+						},
+						"description": "Add bridge to group"
+					},
+					"response": []
+				},
+				{
+					"name": "Set load Limit on each call bridge",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic YXBpOmRDbG91ZDEyMyE="
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "loadLimit",
+									"value": "6250",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://{{_cmshost}}:445/api/v1/system/configuration/cluster",
+							"protocol": "https",
+							"host": [
+								"{{_cmshost}}"
+							],
+							"port": "445",
+							"path": [
+								"api",
+								"v1",
+								"system",
+								"configuration",
+								"cluster"
+							]
+						},
+						"description": null
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "60758ea4-76e9-44af-96e2-9b260ab27c27",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "9ca86bb3-5ba1-4fb9-b136-a20ca542710a",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "queries",
+			"description": "",
+			"item": [
+				{
+					"name": "accessQuery",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://{{_cmshost}}:445/api/v1/accessQuery",
+							"protocol": "https",
+							"host": [
+								"{{_cmshost}}"
+							],
+							"port": "445",
+							"path": [
+								"api",
+								"v1",
+								"accessQuery"
+							]
+						},
+						"description": "The accessQuery method finds details of how a given URI or call ID (for example, one that could\nbe associated with a coSpace) might be reached."
+					},
+					"response": []
+				},
+				{
+					"name": "conversationIdQuery",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://{{_cmshost}}:445/api/v1/conversationIdQuery",
+							"protocol": "https",
+							"host": [
+								"{{_cmshost}}"
+							],
+							"port": "445",
+							"path": [
+								"api",
+								"v1",
+								"conversationIdQuery"
+							]
+						},
+						"description": "The conversationIdQuery method finds whether a conversation with a specified ID has been\nfound."
+					},
+					"response": []
+				},
+				{
+					"name": "uriUsage",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://{{_cmshost}}:445/api/v1/accessQuery",
+							"protocol": "https",
+							"host": [
+								"{{_cmshost}}"
+							],
+							"port": "445",
+							"path": [
+								"api",
+								"v1",
+								"accessQuery"
+							]
+						},
+						"description": "The uriUsageQuery method finds the coSpace, user and/or IVR using the specified URI within\nthe specified tenant."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "callBrandingProfiles",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "profiles",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "calls",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "callLegs",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "callLegProfiles",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "compatibilityProfiles",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "conversationIdQuery",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "coSpaceBulk",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "coSpaces",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "dialTransforms",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "directorySearchLocations",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "dtmfProfiles",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "forwardingDialPlanRules",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "inboundDialPlanRules",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "ivrs",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "outboundDialPlanRules",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "participants",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "recorders",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "streamers",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "system",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "tenantGroups",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "tenants",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "turnServers",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "uriUsageQuery",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "users",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "webBridges",
+			"description": "",
+			"item": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "dCloud123!",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "admin",
+				"type": "string"
+			},
+			{
+				"key": "saveHelperData",
+				"type": "any"
+			},
+			{
+				"key": "showPassword",
+				"value": false,
+				"type": "boolean"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "69039141-acc1-4706-9c6e-3e28a87d2b92",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "719f92ce-9e69-484e-b493-b4cb7673a99f",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
