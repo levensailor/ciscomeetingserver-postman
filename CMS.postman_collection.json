@@ -1,41 +1,976 @@
 {
 	"info": {
-		"name": "CMS",
 		"_postman_id": "5d939bad-d366-5b20-9406-4b7774f4b775",
-		"description": "",
+		"name": "Cisco Meeting Server",
+		"description": "https://www.cisco.com/c/dam/en/us/td/docs/conferencing/ciscoMeetingServer/Reference_Guides/Version-2-3/Cisco-Meeting-Server-API-Reference-Guide-2-3.pdf",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "userProfiles",
+			"name": "Profiles",
 			"description": "",
 			"item": [
 				{
-					"name": "https://cms1.dcloud.cisco.com:445/api/v1/userProfiles",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Basic YXBpOmRDbG91ZDEyMyE="
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/x-www-form-urlencoded"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "hasLicense",
-									"value": "true",
-									"type": "text"
+					"name": "/userProfiles",
+					"description": "",
+					"item": [
+						{
+							"name": "userProfiles/<userProfileId>",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "hasLicense",
+											"value": "true",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/userProfiles/{{userProfileId}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"userProfiles",
+										"{{userProfileId}}"
+									]
 								}
-							]
+							},
+							"response": []
 						},
+						{
+							"name": "userProfiles",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "hasLicense",
+											"value": "true",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/userProfiles",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"userProfiles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "userProfiles",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "hasLicense",
+											"value": "true",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/userProfiles/",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"userProfiles",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "e583cc28-9d00-4d8f-a01d-3695d693b467",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "592461de-f2d3-46e0-be1f-5fa77c12cc24",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "/callBrandingProfiles",
+					"description": "",
+					"item": [
+						{
+							"name": "Retrieve Call Branding Profiles",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "ldapSource",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/callBrandingProfiles",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"callBrandingProfiles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a Call Branding Profile",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "ldapSource",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/callBrandingProfiles",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"callBrandingProfiles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Modify a Call Branding Profile",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "ldapSource",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/callBrandingProfiles/{{callBrandingProfileId}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"callBrandingProfiles",
+										"{{callBrandingProfileId}}"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "/dtmfProfiles",
+					"description": "",
+					"item": [
+						{
+							"name": "callProfiles",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "ldapSource",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/dtmfProfiles",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"dtmfProfiles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "dtmfProfiles",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "ldapSource",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/dtmfProfiles",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"dtmfProfiles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "dtmfProfiles/<dtmfProfileId>",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "ldapSource",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/dtmfProfiles/{{dtmfProfileId}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"dtmfProfiles",
+										"{{dtmfProfileId}}"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "/callProfiles",
+					"description": "",
+					"item": [
+						{
+							"name": "callProfiles",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "ldapSource",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/callProfiles",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"callProfiles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "callProfiles/<callProfileId>",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "ldapSource",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/callProfiles",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"callProfiles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "callProfiles/<callProfileId>",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "ldapSource",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/callProfiles/{{callProfileId}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"callProfiles",
+										"{{callProfileId}}"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "/callLegProfiles",
+					"description": "",
+					"item": [
+						{
+							"name": "Retrieve all Call Leg Profiles",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/CallLegProfiles",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"CallLegProfiles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a new Call Leg Profile",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/CallLegProfiles",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"CallLegProfiles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Modify an existing Call Leg Profile",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/CallLegProfiles/{{callLegProfileId}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"CallLegProfiles",
+										"{{callLegProfileId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Retrieve details on a Call Leg Profile",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/CallLegProfiles/{{callLegProfileId}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"CallLegProfiles",
+										"{{callLegProfileId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Retrieve usage on a Call Leg Profile",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/CallLegProfiles/{{callLegProfileId}}/usage",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"CallLegProfiles",
+										"{{callLegProfileId}}",
+										"usage"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Trace arrival of a Call Leg from Profile",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/CallLegs/{{callLegId}}/callLegProfileTrace",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"CallLegs",
+										"{{callLegId}}",
+										"callLegProfileTrace"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Generate new Keyframe (TAC USAGE)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/CallLegs/{{callLegId}}/generateKeyframe",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"CallLegs",
+										"{{callLegId}}",
+										"generateKeyframe"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "/compatibilityProfiles",
+					"description": "",
+					"item": [
+						{
+							"name": "Retrieve compatibility profile operations",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/compatabilityProfiles",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"compatabilityProfiles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create compatability profile",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/compatabilityProfiles",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"compatabilityProfiles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Modify existing compatability profile",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/compatabilityProfiles/{{compatabilityProfileId}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"compatabilityProfiles",
+										"{{compatabilityProfileId}}"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"description": "",
+			"item": [
+				{
+					"name": "/userProfiles",
+					"description": "",
+					"item": [
+						{
+							"name": "userProfiles/<userProfileId>",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "hasLicense",
+											"value": "true",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/userProfiles/{{userProfileId}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"userProfiles",
+										"{{userProfileId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "userProfiles",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "hasLicense",
+											"value": "true",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/userProfiles",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"userProfiles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "userProfiles",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "hasLicense",
+											"value": "true",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/userProfiles/",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"userProfiles",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "e583cc28-9d00-4d8f-a01d-3695d693b467",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "592461de-f2d3-46e0-be1f-5fa77c12cc24",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Retrieve all users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
 						"url": {
-							"raw": "https://{{_cmshost}}:445/api/v1/userProfiles",
+							"raw": "https://{{_cmshost}}:445/api/v1/users",
 							"protocol": "https",
 							"host": [
 								"{{_cmshost}}"
@@ -44,39 +979,20 @@
 							"path": [
 								"api",
 								"v1",
-								"userProfiles"
+								"users"
 							]
-						},
-						"description": null
+						}
 					},
 					"response": []
 				},
 				{
-					"name": "https://cms1.dcloud.cisco.com:445/api/v1/userProfiles",
+					"name": "Retrieve details of a user",
 					"request": {
 						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Basic YXBpOmRDbG91ZDEyMyE="
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/x-www-form-urlencoded"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "hasLicense",
-									"value": "true",
-									"type": "text"
-								}
-							]
-						},
+						"header": [],
+						"body": {},
 						"url": {
-							"raw": "https://{{_cmshost}}:445/api/v1/userProfiles",
+							"raw": "https://{{_cmshost}}:445/api/v1/users/{{userId}}",
 							"protocol": "https",
 							"host": [
 								"{{_cmshost}}"
@@ -85,467 +1001,2915 @@
 							"path": [
 								"api",
 								"v1",
-								"userProfiles"
+								"users",
+								"{{userId}}"
 							]
-						},
-						"description": null
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve coSpaces a user is in",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{_cmshost}}:445/api/v1/users/{{userId}}/usercoSpaces",
+							"protocol": "https",
+							"host": [
+								"{{_cmshost}}"
+							],
+							"port": "445",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"{{userId}}",
+								"usercoSpaces"
+							]
+						}
 					},
 					"response": []
 				}
 			]
 		},
 		{
-			"name": "ldap",
+			"name": "coSpaces",
 			"description": "",
 			"item": [
 				{
-					"name": "https://cms1.dcloud.cisco.com:445/api/v1/ldapSyncs",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Basic YXBpOmRDbG91ZDEyMyE="
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/x-www-form-urlencoded"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "ldapSource",
-									"value": "",
-									"type": "text"
+					"name": "/coSpaces",
+					"description": "",
+					"item": [
+						{
+							"name": "Retrieve all coSpaces",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/coSpaces",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"coSpaces"
+									]
 								}
-							]
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "https://{{_cmshost}}:445/api/v1/ldapSyncs",
-							"protocol": "https",
-							"host": [
-								"{{_cmshost}}"
-							],
-							"port": "445",
-							"path": [
-								"api",
-								"v1",
-								"ldapSyncs"
-							]
+						{
+							"name": "Create new coSpace",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/coSpaces",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"coSpaces"
+									]
+								}
+							},
+							"response": []
 						},
-						"description": null
-					},
-					"response": []
+						{
+							"name": "Modify a coSpace",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/coSpaces/{{coSpaceId}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"coSpaces",
+										"{{coSpaceId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Retrieve details of a coSpace",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/coSpaces/{{coSpaceId}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"coSpaces",
+										"{{coSpaceId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Retrieve meeting entry details of a coSpace",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/coSpaces/{{coSpaceId}}/meeting",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"coSpaces",
+										"{{coSpaceId}}",
+										"meeting"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Retrieve all members of a coSpace",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/coSpaces/{{coSpaceId}}/coSpaceUsers",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"coSpaces",
+										"{{coSpaceId}}",
+										"coSpaceUsers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add member to a coSpace",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/coSpaces/{{coSpaceId}}/coSpaceUsers",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"coSpaces",
+										"{{coSpaceId}}",
+										"coSpaceUsers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Modify membership to a coSpace",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/coSpaces/{{coSpaceId}}/coSpaceUsers/{{coSpaceUserId}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"coSpaces",
+										"{{coSpaceId}}",
+										"coSpaceUsers",
+										"{{coSpaceUserId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Retrieve details of a coSpace member",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/coSpaces/{{coSpaceId}}/coSpaceUsers/{{coSpaceUserId}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"coSpaces",
+										"{{coSpaceId}}",
+										"coSpaceUsers",
+										"{{coSpaceUserId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Post a message to a coSpace",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/coSpaces/{{coSpaceId}}/messages",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"coSpaces",
+										"{{coSpaceId}}",
+										"messages"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a message from a coSpace",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/coSpaces/{{coSpaceId}}/messages",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"coSpaces",
+										"{{coSpaceId}}",
+										"messages"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Retrieve access methods of a coSpace",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/coSpaces/{{coSpaceId}}/accessMethods",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"coSpaces",
+										"{{coSpaceId}}",
+										"accessMethods"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create access method for a coSpace",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/coSpaces/{{coSpaceId}}/accessMethods",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"coSpaces",
+										"{{coSpaceId}}",
+										"accessMethods"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Modify access method of a coSpace",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/coSpaces/{{coSpaceId}}/accessMethods/{{accessMethodId}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"coSpaces",
+										"{{coSpaceId}}",
+										"accessMethods",
+										"{{accessMethodId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Details of access method of a coSpace",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/coSpaces/{{coSpaceId}}/accessMethods/{{accessMethodId}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"coSpaces",
+										"{{coSpaceId}}",
+										"accessMethods",
+										"{{accessMethodId}}"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
 				},
 				{
-					"name": "https://cms1.dcloud.cisco.com:445/api/v1/ldapSources",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Basic YXBpOmRDbG91ZDEyMyE="
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/x-www-form-urlencoded"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "server",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "mapping",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "userProfile",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "baseDn",
-									"value": "dc=dcloud,dc=cisco,dc=com",
-									"type": "text"
-								},
-								{
-									"key": "filter",
-									"value": "telephoneNumber=*",
-									"type": "text"
+					"name": "/coSpaceBulk",
+					"description": "",
+					"item": [
+						{
+							"name": "Create Bulk coSpace Parameter Set",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/coSpaceBulkParameterSets",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"coSpaceBulkParameterSets"
+									]
 								}
-							]
-						},
-						"url": {
-							"raw": "https://{{_cmshost}}:445/api/v1/ldapSources",
-							"protocol": "https",
-							"host": [
-								"{{_cmshost}}"
-							],
-							"port": "445",
-							"path": [
-								"api",
-								"v1",
-								"ldapSources"
-							]
-						},
-						"description": null
-					},
-					"response": []
-				},
-				{
-					"name": "https://cms1.dcloud.cisco.com:445/api/v1/ldapSources",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Basic YXBpOmRDbG91ZDEyMyE="
 							},
-							{
-								"key": "Content-Type",
-								"value": "application/x-www-form-urlencoded"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "server",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "mapping",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "userProfile",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "baseDn",
-									"value": "dc=dcloud,dc=cisco,dc=com",
-									"type": "text"
-								},
-								{
-									"key": "filter",
-									"value": "telephoneNumber=*",
-									"type": "text"
+							"response": []
+						},
+						{
+							"name": "Modify Bulk coSpace Parameter Set",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/coSpaceBulkParameterSets",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"coSpaceBulkParameterSets"
+									]
 								}
-							]
-						},
-						"url": {
-							"raw": "https://{{_cmshost}}:445/api/v1/ldapSources",
-							"protocol": "https",
-							"host": [
-								"{{_cmshost}}"
-							],
-							"port": "445",
-							"path": [
-								"api",
-								"v1",
-								"ldapSources"
-							]
-						},
-						"description": null
-					},
-					"response": []
-				},
-				{
-					"name": "https://cms1.dcloud.cisco.com:445/api/v1/ldapServers",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Basic YXBpOmRDbG91ZDEyMyE="
 							},
-							{
-								"key": "Content-Type",
-								"value": "application/x-www-form-urlencoded"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "address",
-									"value": "ad1.dcloud.cisco.com",
-									"type": "text"
-								},
-								{
-									"key": "portNumber",
-									"value": "389",
-									"type": "text"
-								},
-								{
-									"key": "username",
-									"value": "cn=administrator,cn=users,dc=dcloud,dc=cisco,dc=com",
-									"type": "text"
-								},
-								{
-									"key": "password",
-									"value": "C1sco12345",
-									"type": "text"
-								},
-								{
-									"key": "secure",
-									"value": "false",
-									"type": "text"
+							"response": []
+						},
+						{
+							"name": "Retrieve Bulk coSpace Parameter Sets",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/coSpaceBulkParameterSets",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"coSpaceBulkParameterSets"
+									]
 								}
-							]
-						},
-						"url": {
-							"raw": "https://{{_cmshost}}:445/api/v1/ldapServers",
-							"protocol": "https",
-							"host": [
-								"{{_cmshost}}"
-							],
-							"port": "445",
-							"path": [
-								"api",
-								"v1",
-								"ldapServers"
-							]
-						},
-						"description": null
-					},
-					"response": []
-				},
-				{
-					"name": "https://cms1.dcloud.cisco.com:445/api/v1/ldapServers",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Basic YXBpOmRDbG91ZDEyMyE="
 							},
-							{
-								"key": "Content-Type",
-								"value": "application/x-www-form-urlencoded"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "address",
-									"value": "ad1.dcloud.cisco.com",
-									"type": "text"
-								},
-								{
-									"key": "portNumber",
-									"value": "389",
-									"type": "text"
-								},
-								{
-									"key": "username",
-									"value": "cn=administrator,cn=users,dc=dcloud,dc=cisco,dc=com",
-									"type": "text"
-								},
-								{
-									"key": "password",
-									"value": "C1sco12345",
-									"type": "text"
-								},
-								{
-									"key": "secure",
-									"value": "false",
-									"type": "text"
+							"response": []
+						},
+						{
+							"name": "Retrieve Bulk coSpace Parameter Set Details",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/coSpaceBulkParameterSets/{{coSpaceBulkParameterSetId}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"coSpaceBulkParameterSets",
+										"{{coSpaceBulkParameterSetId}}"
+									]
 								}
-							]
-						},
-						"url": {
-							"raw": "https://{{_cmshost}}:445/api/v1/ldapServers",
-							"protocol": "https",
-							"host": [
-								"{{_cmshost}}"
-							],
-							"port": "445",
-							"path": [
-								"api",
-								"v1",
-								"ldapServers"
-							]
-						},
-						"description": null
-					},
-					"response": []
-				},
-				{
-					"name": "https://cms1.dcloud.cisco.com:445/api/v1/ldapMappings",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Basic YXBpOmRDbG91ZDEyMyE="
 							},
-							{
-								"key": "Content-Type",
-								"value": "application/x-www-form-urlencoded"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "nameMapping",
-									"value": "$cn$",
-									"type": "text"
-								},
-								{
-									"key": "jidMapping",
-									"value": "$sAMAccountName$@dcloud.cisco.com",
-									"type": "text"
-								},
-								{
-									"key": "coSpaceNameMapping",
-									"value": "$cn$'s Meeting Space",
-									"type": "text"
-								},
-								{
-									"key": "coSpaceUriMapping",
-									"value": "$sAMAccountName$.space",
-									"type": "text"
-								},
-								{
-									"key": "coSpaceCallIdMapping",
-									"value": "$ipPhone$",
-									"type": "text"
+							"response": []
+						},
+						{
+							"name": "Queue Bulk Sync Operations",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/coSpaceBulkSyncs",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"coSpaceBulkSyncs"
+									]
 								}
-							]
-						},
-						"url": {
-							"raw": "https://{{_cmshost}}:445/api/v1/ldapMappings",
-							"protocol": "https",
-							"host": [
-								"{{_cmshost}}"
-							],
-							"port": "445",
-							"path": [
-								"api",
-								"v1",
-								"ldapMappings"
-							]
-						},
-						"description": null
-					},
-					"response": []
-				},
-				{
-					"name": "https://cms1.dcloud.cisco.com:445/api/v1/ldapMappings",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Basic YXBpOmRDbG91ZDEyMyE="
 							},
-							{
-								"key": "Content-Type",
-								"value": "application/x-www-form-urlencoded"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "nameMapping",
-									"value": "$cn$",
-									"type": "text"
-								},
-								{
-									"key": "jidMapping",
-									"value": "$sAMAccountName$@dcloud.cisco.com",
-									"type": "text"
-								},
-								{
-									"key": "coSpaceNameMapping",
-									"value": "$cn$'s Meeting Space",
-									"type": "text"
-								},
-								{
-									"key": "coSpaceUriMapping",
-									"value": "$sAMAccountName$.space",
-									"type": "text"
-								},
-								{
-									"key": "coSpaceCallIdMapping",
-									"value": "$ipPhone$",
-									"type": "text"
+							"response": []
+						},
+						{
+							"name": "Retrieve Bulk Sync Operations",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/coSpaceBulkSyncs",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"coSpaceBulkSyncs"
+									]
 								}
-							]
-						},
-						"url": {
-							"raw": "https://{{_cmshost}}:445/api/v1/ldapMappings",
-							"protocol": "https",
-							"host": [
-								"{{_cmshost}}"
-							],
-							"port": "445",
-							"path": [
-								"api",
-								"v1",
-								"ldapMappings"
-							]
-						},
-						"description": null
-					},
-					"response": []
-				}
-			],
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"id": "fca9b3aa-15ff-40c6-97cf-d5b527da70df",
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"id": "03d697d1-b017-4d3e-a6dd-dc38c3ac1ab7",
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
 				}
 			]
 		},
 		{
-			"name": "callBridges",
+			"name": "Dial Plan",
 			"description": "",
 			"item": [
 				{
-					"name": "Get Call Bridge IDs",
+					"name": "/outboundDialPlanRules",
+					"description": "",
+					"item": [
+						{
+							"name": "Retrieve all outbound dialplan rules",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/outboundDialPlanRules",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"outboundDialPlanRules"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create an outbound dialplan rule",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/outboundDialPlanRules",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"outboundDialPlanRules"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Modify an outbound dialplan rule",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/outboundDialPlanRules/{{outboundDialPlanRuleId}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"outboundDialPlanRules",
+										"{{outboundDialPlanRuleId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Retrieve details of an outbound dialplan rule",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/outboundDialPlanRules/{{outboundDialPlanRuleId}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"outboundDialPlanRules",
+										"{{outboundDialPlanRuleId}}"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "/forwardingDialPlanRules",
+					"description": "",
+					"item": [
+						{
+							"name": "Retrieve all forwarding dialplan rules",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/forwardingDialPlanRules",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"forwardingDialPlanRules"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a forwarding dialplan rule",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/forwardingDialPlanRules",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"forwardingDialPlanRules"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Modify a forwarding dialplan rule",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/forwardingDialPlanRules/{{forwardingDialPlanRuleId}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"forwardingDialPlanRules",
+										"{{forwardingDialPlanRuleId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Retrieve details of a forwarding dialplan rule",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/forwardingDialPlanRules/{{forwardingDialPlanRuleId}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"forwardingDialPlanRules",
+										"{{forwardingDialPlanRuleId}}"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "/inboundDialPlanRules",
+					"description": "",
+					"item": [
+						{
+							"name": "Retrieve all inbound dialplan rules",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/inboundDialPlanRules",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"inboundDialPlanRules"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create an inbound dialplan rule",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/inboundDialPlanRules",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"inboundDialPlanRules"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Modify an inbound dialplan rule",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/inboundDialPlanRules/{{inboundDialPlanRuleId}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"inboundDialPlanRules",
+										"{{inboundDialPlanRuleId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Retrieve details of an inbound dialplan rule",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/inboundDialPlanRules/{{inboundDialPlanRuleId}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"inboundDialPlanRules",
+										"{{inboundDialPlanRuleId}}"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "Calls",
+			"description": "",
+			"item": [
+				{
+					"name": "/calls",
+					"description": "",
+					"item": [
+						{
+							"name": "Retrieve All Calls",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "ldapSource",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/calls",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"calls"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Retrieve Info about a call",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "ldapSource",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/calls/{{callid}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"calls",
+										"{{callid}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a Call",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "ldapSource",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/calls",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"calls"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Modify a call in progress",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "ldapSource",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/calls/{{callid}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"calls",
+										"{{callid}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Diagnostics for a call",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "ldapSource",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/calls/{{callid}}/diagnostics",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"calls",
+										"{{callid}}",
+										"diagnostics"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Retrieve participants in a conference",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "ldapSource",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/calls/{{callid}}/participants",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"calls",
+										"{{callid}}",
+										"participants"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add participant to conference",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "ldapSource",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/calls/{{callid}}/participants",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"calls",
+										"{{callid}}",
+										"participants"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Set properties for all participants",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "ldapSource",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/calls/{{callid}}/participants/*",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"calls",
+										"{{callid}}",
+										"participants",
+										"*"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "/callBridges",
+					"description": "",
+					"item": [
+						{
+							"name": "Get Call Bridge IDs",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/callBridges",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"callBridges"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Call Bridge Groups",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "loadBalancingEnabled",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/callBridgeGroups",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"callBridgeGroups"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Call bridge group IDs",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/callBridgeGroups",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"callBridgeGroups"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Assign Call Bridge to Group",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "callBridgeGroup",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/callBridges/",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"callBridges",
+										""
+									]
+								},
+								"description": "Add bridge to group"
+							},
+							"response": []
+						},
+						{
+							"name": "Set load Limit on each call bridge",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "loadLimit",
+											"value": "6250",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/system/configuration/cluster",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"system",
+										"configuration",
+										"cluster"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "60758ea4-76e9-44af-96e2-9b260ab27c27",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "9ca86bb3-5ba1-4fb9-b136-a20ca542710a",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "/callLegs",
+					"description": "",
+					"item": [
+						{
+							"name": "Retrieve All Call Legs",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "ldapSource",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/callLegs",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"callLegs"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Retrieve All Call Legs for a Call",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "ldapSource",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/calls/{{callId}}/callLegs",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"calls",
+										"{{callId}}",
+										"callLegs"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Adding and Modifying Call Legs",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "ldapSource",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/callLegs",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"callLegs"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Retrieve All Details for a Call Leg",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "ldapSource",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/callLegs/{{callLegId}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"callLegs",
+										"{{callLegId}}"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "/participants",
+					"description": "",
+					"item": [
+						{
+							"name": "Retrieve all participants of all conferences",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/participants",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"participants"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Modify a participant",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/participants/{{participantId}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"participants",
+										"{{participantId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Retrieve details of a participant",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/participants/{{participantId}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"participants",
+										"{{participantId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Retrieve all call legs of a participant",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/participants/{{participantId}}/callLegs",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"participants",
+										"{{participantId}}",
+										"callLegs"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "/dialTransforms",
+					"description": "",
+					"item": [
+						{
+							"name": "Retrieve all Dial Transforms",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/dialTransforms",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"dialTransforms"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create New Dial Transform",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/dialTransforms",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"dialTransforms"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Modify Dial Transform",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/dialTransforms/{{dialTransformId}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"dialTransforms",
+										"{{dialTransformId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Retrieve details of a Dial Transform",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/dialTransforms/{{dialTransformId}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"dialTransforms",
+										"{{dialTransformId}}"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "/ivrs",
+					"description": "",
+					"item": [
+						{
+							"name": "Retrieve all IVRs",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/ivrs",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"ivrs"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create IVR",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/ivrs",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"ivrs"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Modify existing IVR",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/ivrs/{{ivrid}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"ivrs",
+										"{{ivrid}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Retrieve details about an IVR",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/ivrs/{{ivrid}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"ivrs",
+										"{{ivrid}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create IVR Branding Profile",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/ivrBrandingProfiles",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"ivrBrandingProfiles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Modify IVR Branding Profile",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/ivrBrandingProfiles/{{ivrBrandingProfileId}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"ivrBrandingProfiles",
+										"{{ivrBrandingProfileId}}"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "System",
+			"description": "",
+			"item": [
+				{
+					"name": "/turnServers",
+					"description": "",
+					"item": [
+						{
+							"name": "Retrieve turn servers",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "ldapSource",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/turnServers",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"turnServers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a turn server",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "ldapSource",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/turnServers",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"turnServers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Modify a turn server",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "ldapSource",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/turnServers/{{turnServerId}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"turnServers",
+										"{{turnServerId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Retrieve details on a turn server",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "ldapSource",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/turnServers/{{turnServerId}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"turnServers",
+										"{{turnServerId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Retrieve a turn servers status",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "ldapSource",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/turnServers/{{turnServerId}}/status",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"turnServers",
+										"{{turnServerId}}",
+										"status"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "/webBridges",
+					"description": "",
+					"item": [
+						{
+							"name": "Retrieve all web bridges",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "ldapSource",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/webBridges",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"webBridges"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a web bridges",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "ldapSource",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/webBridges",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"webBridges"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Modify a web bridge",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "ldapSource",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/webBridges/{{webBridgeId}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"webBridges",
+										"{{webBridgeId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Retrieve details of a web bridge",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "ldapSource",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/webBridges/{{webBridgeId}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"webBridges",
+										"{{webBridgeId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update web bridge customization",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "ldapSource",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/webBridges/{{webBridgeId}}/updateCustomization",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"webBridges",
+										"{{webBridgeId}}",
+										"updateCustomization"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Retrieve status of a web bridge",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "ldapSource",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/webBridges/{{webBridgeId}}/status",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"webBridges",
+										"{{webBridgeId}}",
+										"status"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "/recorders",
+					"description": "",
+					"item": [
+						{
+							"name": "Retrieve recorders",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "loadBalancingEnabled",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/recorders",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"recorders"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a recorder",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "loadBalancingEnabled",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/recorders",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"recorders"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Modify a recorder",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "loadBalancingEnabled",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/recorders/{{recorderId}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"recorders",
+										"{{recorderId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Retrieve details of a recorder",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "loadBalancingEnabled",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/recorders/{{recorderId}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"recorders",
+										"{{recorderId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Retrieve status of a recorder",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "loadBalancingEnabled",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/recorders/{{recorderId}}/status",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"recorders",
+										"{{recorderId}}",
+										"status"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "/streamers",
+					"description": "",
+					"item": [
+						{
+							"name": "Retrieve streamers",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "loadBalancingEnabled",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/streamers",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"streamers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a streamer",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "loadBalancingEnabled",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/streamers",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"streamers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Modify a streamer",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "loadBalancingEnabled",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/streamers/{{streamerId}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"streamers",
+										"{{streamerId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Retrieve details of a streamer",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "loadBalancingEnabled",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/streamers/{{streamerId}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"streamers",
+										"{{streamerId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Retrieve status of a streamer",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "loadBalancingEnabled",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/streamers/{{streamerId}}/status",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"streamers",
+										"{{streamerId}}",
+										"status"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Retrieve system profile",
 					"request": {
 						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Basic YXBpOmRDbG91ZDEyMyE="
-							}
-						],
+						"header": [],
 						"body": {},
 						"url": {
-							"raw": "https://{{_cmshost}}:445/api/v1/callBridges",
+							"raw": "https://{{_cmshost}}:445/api/v1/system/profiles",
 							"protocol": "https",
 							"host": [
 								"{{_cmshost}}"
@@ -554,72 +3918,278 @@
 							"path": [
 								"api",
 								"v1",
-								"callBridges"
+								"system",
+								"profiles"
 							]
-						},
-						"description": null
+						}
 					},
 					"response": []
 				},
 				{
-					"name": "Create Call Bridge Groups",
+					"name": "Retrieve system alarms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{_cmshost}}:445/api/v1/system/alarms",
+							"protocol": "https",
+							"host": [
+								"{{_cmshost}}"
+							],
+							"port": "445",
+							"path": [
+								"api",
+								"v1",
+								"system",
+								"alarms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve system status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{_cmshost}}:445/api/v1/system/status",
+							"protocol": "https",
+							"host": [
+								"{{_cmshost}}"
+							],
+							"port": "445",
+							"path": [
+								"api",
+								"v1",
+								"system",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve system database",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{_cmshost}}:445/api/v1/system/database",
+							"protocol": "https",
+							"host": [
+								"{{_cmshost}}"
+							],
+							"port": "445",
+							"path": [
+								"api",
+								"v1",
+								"system",
+								"database"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve system cdrReceivers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{_cmshost}}:445/api/v1/system/cdrReceivers",
+							"protocol": "https",
+							"host": [
+								"{{_cmshost}}"
+							],
+							"port": "445",
+							"path": [
+								"api",
+								"v1",
+								"system",
+								"cdrReceivers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve details of a cdrReceiver",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{_cmshost}}:445/api/v1/system/cdrReceivers/{{cdrReceiverId}}",
+							"protocol": "https",
+							"host": [
+								"{{_cmshost}}"
+							],
+							"port": "445",
+							"path": [
+								"api",
+								"v1",
+								"system",
+								"cdrReceivers",
+								"{{cdrReceiverId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve system licenses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{_cmshost}}:445/api/v1/system/licensing",
+							"protocol": "https",
+							"host": [
+								"{{_cmshost}}"
+							],
+							"port": "445",
+							"path": [
+								"api",
+								"v1",
+								"system",
+								"licensing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve system multi party licenses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{_cmshost}}:445/api/v1/system/multiPartyLicensing",
+							"protocol": "https",
+							"host": [
+								"{{_cmshost}}"
+							],
+							"port": "445",
+							"path": [
+								"api",
+								"v1",
+								"system",
+								"multiPartyLicensing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve personal licenses of multi party",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{_cmshost}}:445/api/v1/system/multiPartyLicensing/activePersonalLicenses",
+							"protocol": "https",
+							"host": [
+								"{{_cmshost}}"
+							],
+							"port": "445",
+							"path": [
+								"api",
+								"v1",
+								"system",
+								"multiPartyLicensing",
+								"activePersonalLicenses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modify the system profile",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{_cmshost}}:445/api/v1/system/profiles",
+							"protocol": "https",
+							"host": [
+								"{{_cmshost}}"
+							],
+							"port": "445",
+							"path": [
+								"api",
+								"v1",
+								"system",
+								"profiles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a cdrReceiver",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{_cmshost}}:445/api/v1/system/cdrReceivers/{{cdrReceiverId}}",
+							"protocol": "https",
+							"host": [
+								"{{_cmshost}}"
+							],
+							"port": "445",
+							"path": [
+								"api",
+								"v1",
+								"system",
+								"cdrReceivers",
+								"{{cdrReceiverId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve XMPP server details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{_cmshost}}:445/api/v1/system/configuration/xmpp",
+							"protocol": "https",
+							"host": [
+								"{{_cmshost}}"
+							],
+							"port": "445",
+							"path": [
+								"api",
+								"v1",
+								"system",
+								"configuration",
+								"xmpp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create an XMPP server",
 					"request": {
 						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Basic YXBpOmRDbG91ZDEyMyE="
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/x-www-form-urlencoded"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "name",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "loadBalancingEnabled",
-									"value": "",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "https://{{_cmshost}}:445/api/v1/callBridgeGroups",
-							"protocol": "https",
-							"host": [
-								"{{_cmshost}}"
-							],
-							"port": "445",
-							"path": [
-								"api",
-								"v1",
-								"callBridgeGroups"
-							]
-						},
-						"description": null
-					},
-					"response": []
-				},
-				{
-					"name": "Get Call bridge group IDs",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Basic YXBpOmRDbG91ZDEyMyE="
-							}
-						],
+						"header": [],
 						"body": {},
 						"url": {
-							"raw": "https://{{_cmshost}}:445/api/v1/callBridgeGroups",
+							"raw": "https://{{_cmshost}}:445/api/v1/system/configuration/xmpp",
 							"protocol": "https",
 							"host": [
 								"{{_cmshost}}"
@@ -628,39 +4198,22 @@
 							"path": [
 								"api",
 								"v1",
-								"callBridgeGroups"
+								"system",
+								"configuration",
+								"xmpp"
 							]
-						},
-						"description": null
+						}
 					},
 					"response": []
 				},
 				{
-					"name": "Assign Call Bridge to Group",
+					"name": "Modify an XMPP server",
 					"request": {
 						"method": "PUT",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Basic YXBpOmRDbG91ZDEyMyE="
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/x-www-form-urlencoded"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "callBridgeGroup",
-									"value": "",
-									"type": "text"
-								}
-							]
-						},
+						"header": [],
+						"body": {},
 						"url": {
-							"raw": "https://{{_cmshost}}:445/api/v1/callBridges/",
+							"raw": "https://{{_cmshost}}:445/api/v1/system/configuration/xmpp/{{xmppServerId}}",
 							"protocol": "https",
 							"host": [
 								"{{_cmshost}}"
@@ -669,38 +4222,21 @@
 							"path": [
 								"api",
 								"v1",
-								"callBridges",
-								""
+								"system",
+								"configuration",
+								"xmpp",
+								"{{xmppServerId}}"
 							]
-						},
-						"description": "Add bridge to group"
+						}
 					},
 					"response": []
 				},
 				{
-					"name": "Set load Limit on each call bridge",
+					"name": "Retrieve call bridge clusters",
 					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Basic YXBpOmRDbG91ZDEyMyE="
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/x-www-form-urlencoded"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "loadLimit",
-									"value": "6250",
-									"type": "text"
-								}
-							]
-						},
+						"method": "GET",
+						"header": [],
+						"body": {},
 						"url": {
 							"raw": "https://{{_cmshost}}:445/api/v1/system/configuration/cluster",
 							"protocol": "https",
@@ -715,52 +4251,18 @@
 								"configuration",
 								"cluster"
 							]
-						},
-						"description": null
+						}
 					},
 					"response": []
-				}
-			],
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"id": "60758ea4-76e9-44af-96e2-9b260ab27c27",
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
 				},
 				{
-					"listen": "test",
-					"script": {
-						"id": "9ca86bb3-5ba1-4fb9-b136-a20ca542710a",
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				}
-			]
-		},
-		{
-			"name": "queries",
-			"description": "",
-			"item": [
-				{
-					"name": "accessQuery",
+					"name": "Create a call bridge cluster",
 					"request": {
 						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/x-www-form-urlencoded"
-							}
-						],
+						"header": [],
 						"body": {},
 						"url": {
-							"raw": "https://{{_cmshost}}:445/api/v1/accessQuery",
+							"raw": "https://{{_cmshost}}:445/api/v1/system/configuration/cluster",
 							"protocol": "https",
 							"host": [
 								"{{_cmshost}}"
@@ -769,21 +4271,124 @@
 							"path": [
 								"api",
 								"v1",
-								"accessQuery"
+								"system",
+								"configuration",
+								"cluster"
 							]
-						},
-						"description": "The accessQuery method finds details of how a given URI or call ID (for example, one that could\nbe associated with a coSpace) might be reached."
+						}
 					},
 					"response": []
 				},
 				{
-					"name": "conversationIdQuery",
+					"name": "Modify a call bridge cluster",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{_cmshost}}:445/api/v1/system/configuration/cluster/{{callBridgeClusterId}}",
+							"protocol": "https",
+							"host": [
+								"{{_cmshost}}"
+							],
+							"port": "445",
+							"path": [
+								"api",
+								"v1",
+								"system",
+								"configuration",
+								"cluster",
+								"{{callBridgeClusterId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve system load",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{_cmshost}}:445/api/v1/system/load",
+							"protocol": "https",
+							"host": [
+								"{{_cmshost}}"
+							],
+							"port": "445",
+							"path": [
+								"api",
+								"v1",
+								"system",
+								"load"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve system diagnostics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{_cmshost}}:445/api/v1/system/diagnostics",
+							"protocol": "https",
+							"host": [
+								"{{_cmshost}}"
+							],
+							"port": "445",
+							"path": [
+								"api",
+								"v1",
+								"system",
+								"diagnostics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve individual system diagnostic",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{_cmshost}}:445/api/v1/system/diagnostics/{{diagnosticId}}",
+							"protocol": "https",
+							"host": [
+								"{{_cmshost}}"
+							],
+							"port": "445",
+							"path": [
+								"api",
+								"v1",
+								"system",
+								"diagnostics",
+								"{{diagnosticId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Queries",
+			"description": "",
+			"item": [
+				{
+					"name": "Returns if a conversation is found",
 					"request": {
 						"method": "GET",
 						"header": [
 							{
-								"key": "Content-Type",
-								"value": "application/x-www-form-urlencoded"
+								"key": "",
+								"value": "",
+								"disabled": true
 							}
 						],
 						"body": {},
@@ -799,19 +4404,19 @@
 								"v1",
 								"conversationIdQuery"
 							]
-						},
-						"description": "The conversationIdQuery method finds whether a conversation with a specified ID has been\nfound."
+						}
 					},
 					"response": []
 				},
 				{
-					"name": "uriUsage",
+					"name": "Find how a URI could be reached",
 					"request": {
 						"method": "POST",
 						"header": [
 							{
-								"key": "Content-Type",
-								"value": "application/x-www-form-urlencoded"
+								"key": "",
+								"value": "",
+								"disabled": true
 							}
 						],
 						"body": {},
@@ -827,142 +4432,942 @@
 								"v1",
 								"accessQuery"
 							]
-						},
-						"description": "The uriUsageQuery method finds the coSpace, user and/or IVR using the specified URI within\nthe specified tenant."
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find where a URI is in use",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"disabled": true
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://{{_cmshost}}:445/api/v1/uriUsageQuery",
+							"protocol": "https",
+							"host": [
+								"{{_cmshost}}"
+							],
+							"port": "445",
+							"path": [
+								"api",
+								"v1",
+								"uriUsageQuery"
+							]
+						}
 					},
 					"response": []
 				}
 			]
 		},
 		{
-			"name": "callBrandingProfiles",
+			"name": "LDAP",
 			"description": "",
-			"item": []
+			"item": [
+				{
+					"name": "/ldap",
+					"description": "",
+					"item": [
+						{
+							"name": "ldapSyncs",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "ldapSource",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/ldapSyncs",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"ldapSyncs"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ldapSyncs/<ldapSyncId>",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "ldapSource",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/ldapSyncs",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"ldapSyncs"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "callBrandingProfiles",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "ldapSource",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/ldapSyncs/{{ldapSyncId}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"ldapSyncs",
+										"{{ldapSyncId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "directorySearchLocations",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "ldapSource",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/ldapSyncs/{{ldapSyncId}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"ldapSyncs",
+										"{{ldapSyncId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ldapSources",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "server",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "mapping",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "userProfile",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "baseDn",
+											"value": "dc=dcloud,dc=cisco,dc=com",
+											"type": "text"
+										},
+										{
+											"key": "filter",
+											"value": "telephoneNumber=*",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/ldapSources",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"ldapSources"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ldapSources",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "server",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "mapping",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "userProfile",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "baseDn",
+											"value": "dc=dcloud,dc=cisco,dc=com",
+											"type": "text"
+										},
+										{
+											"key": "filter",
+											"value": "telephoneNumber=*",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/ldapSources",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"ldapSources"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ldapServers",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "address",
+											"value": "ad1.dcloud.cisco.com",
+											"type": "text"
+										},
+										{
+											"key": "portNumber",
+											"value": "389",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "cn=administrator,cn=users,dc=dcloud,dc=cisco,dc=com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "C1sco12345",
+											"type": "text"
+										},
+										{
+											"key": "secure",
+											"value": "false",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/ldapServers",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"ldapServers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ldapServers",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "address",
+											"value": "ad1.dcloud.cisco.com",
+											"type": "text"
+										},
+										{
+											"key": "portNumber",
+											"value": "389",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "cn=administrator,cn=users,dc=dcloud,dc=cisco,dc=com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "C1sco12345",
+											"type": "text"
+										},
+										{
+											"key": "secure",
+											"value": "false",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/ldapServers",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"ldapServers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ldapMappings",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "nameMapping",
+											"value": "$cn$",
+											"type": "text"
+										},
+										{
+											"key": "jidMapping",
+											"value": "$sAMAccountName$@cdpneighbors.com",
+											"type": "text"
+										},
+										{
+											"key": "coSpaceNameMapping",
+											"value": "$cn$'s Meeting Space",
+											"type": "text"
+										},
+										{
+											"key": "coSpaceUriMapping",
+											"value": "$sAMAccountName$.space",
+											"type": "text"
+										},
+										{
+											"key": "coSpaceCallIdMapping",
+											"value": "$ipPhone$",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/ldapMappings",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"ldapMappings"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ldapMappings",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "nameMapping",
+											"value": "$cn$",
+											"type": "text"
+										},
+										{
+											"key": "jidMapping",
+											"value": "$sAMAccountName$@dcloud.cisco.com",
+											"type": "text"
+										},
+										{
+											"key": "coSpaceNameMapping",
+											"value": "$cn$'s Meeting Space",
+											"type": "text"
+										},
+										{
+											"key": "coSpaceUriMapping",
+											"value": "$sAMAccountName$.space",
+											"type": "text"
+										},
+										{
+											"key": "coSpaceCallIdMapping",
+											"value": "$ipPhone$",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/ldapMappings",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"ldapMappings"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "fca9b3aa-15ff-40c6-97cf-d5b527da70df",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "03d697d1-b017-4d3e-a6dd-dc38c3ac1ab7",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "/directorySearchLocations",
+					"description": "",
+					"item": [
+						{
+							"name": "directorySearchLocations",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "ldapSource",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/directorySearchLocations",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"directorySearchLocations"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "directorySearchLocations/<directorySearchLocationId>",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "ldapSource",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/directorySearchLocations",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"directorySearchLocations"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "directorySearchLocations/<directorySearchLocationId>",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "ldapSource",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/directorySearchLocations/{{directorySearchLocationId}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"directorySearchLocations",
+										"{{directorySearchLocationId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "directorySearchLocations/<directorySearchLocationId>",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic "
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "ldapSource",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/directorySearchLocations/{{directorySearchLocationId}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"directorySearchLocations",
+										"{{directorySearchLocationId}}"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
 		},
 		{
-			"name": "profiles",
+			"name": "Multi Tenancy",
 			"description": "",
-			"item": []
-		},
-		{
-			"name": "calls",
-			"description": "",
-			"item": []
-		},
-		{
-			"name": "callLegs",
-			"description": "",
-			"item": []
-		},
-		{
-			"name": "callLegProfiles",
-			"description": "",
-			"item": []
-		},
-		{
-			"name": "compatibilityProfiles",
-			"description": "",
-			"item": []
-		},
-		{
-			"name": "conversationIdQuery",
-			"description": "",
-			"item": []
-		},
-		{
-			"name": "coSpaceBulk",
-			"description": "",
-			"item": []
-		},
-		{
-			"name": "coSpaces",
-			"description": "",
-			"item": []
-		},
-		{
-			"name": "dialTransforms",
-			"description": "",
-			"item": []
-		},
-		{
-			"name": "directorySearchLocations",
-			"description": "",
-			"item": []
-		},
-		{
-			"name": "dtmfProfiles",
-			"description": "",
-			"item": []
-		},
-		{
-			"name": "forwardingDialPlanRules",
-			"description": "",
-			"item": []
-		},
-		{
-			"name": "inboundDialPlanRules",
-			"description": "",
-			"item": []
-		},
-		{
-			"name": "ivrs",
-			"description": "",
-			"item": []
-		},
-		{
-			"name": "outboundDialPlanRules",
-			"description": "",
-			"item": []
-		},
-		{
-			"name": "participants",
-			"description": "",
-			"item": []
-		},
-		{
-			"name": "recorders",
-			"description": "",
-			"item": []
-		},
-		{
-			"name": "streamers",
-			"description": "",
-			"item": []
-		},
-		{
-			"name": "system",
-			"description": "",
-			"item": []
-		},
-		{
-			"name": "tenantGroups",
-			"description": "",
-			"item": []
-		},
-		{
-			"name": "tenants",
-			"description": "",
-			"item": []
-		},
-		{
-			"name": "turnServers",
-			"description": "",
-			"item": []
-		},
-		{
-			"name": "uriUsageQuery",
-			"description": "",
-			"item": []
-		},
-		{
-			"name": "users",
-			"description": "",
-			"item": []
-		},
-		{
-			"name": "webBridges",
-			"description": "",
-			"item": []
+			"item": [
+				{
+					"name": "/tenants",
+					"description": "",
+					"item": [
+						{
+							"name": "Retrieve all tenants",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/tenants",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"tenants"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a new tenant",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/tenants",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"tenants"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Modify a tenant",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/tenants/{{tenantId}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"tenants",
+										"{{tenantId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Retrieve details of a tenant",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/tenants/{{tenantId}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"tenants",
+										"{{tenantId}}"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "/tenantGroups",
+					"description": "",
+					"item": [
+						{
+							"name": "Modify a tenant group",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/tenantGroups/{{tenantGroupId}}",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"tenantGroups",
+										"{{tenantGroupId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a new tenant group",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/tenantGroups",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"tenantGroups"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Retrieve all tenant groups",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://{{_cmshost}}:445/api/v1/tenantGroups",
+									"protocol": "https",
+									"host": [
+										"{{_cmshost}}"
+									],
+									"port": "445",
+									"path": [
+										"api",
+										"v1",
+										"tenantGroups"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
 		}
 	],
 	"auth": {
@@ -970,12 +5375,12 @@
 		"basic": [
 			{
 				"key": "password",
-				"value": "dCloud123!",
+				"value": "{{password}}",
 				"type": "string"
 			},
 			{
 				"key": "username",
-				"value": "admin",
+				"value": "{{username}}",
 				"type": "string"
 			},
 			{
@@ -1009,6 +5414,36 @@
 					""
 				]
 			}
+		}
+	],
+	"variable": [
+		{
+			"id": "036e0e82-8238-48ad-a877-321777cba42d",
+			"key": "username",
+			"value": "",
+			"type": "string",
+			"description": ""
+		},
+		{
+			"id": "09afe377-bd94-4e77-9525-64dfc33928bb",
+			"key": "password",
+			"value": "",
+			"type": "string",
+			"description": ""
+		},
+		{
+			"id": "116612d2-32f0-443e-86bd-734609f6d185",
+			"key": "_cmshost",
+			"value": "",
+			"type": "string",
+			"description": ""
+		},
+		{
+			"id": "84dd82af-728e-4067-89e5-ea0f439f1c3d",
+			"key": "port",
+			"value": "445",
+			"type": "string",
+			"description": ""
 		}
 	]
 }
